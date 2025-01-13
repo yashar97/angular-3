@@ -4,12 +4,17 @@
 <div class="row">
     <div class="col">
         <!-- componente searchbox  -->
-         <input type="text" placeholder="Buscar por capital" class="form-control">
+        <shared-search-box (onValue)="searchByCapital($event)" placeHolder="Buscar por capital"></shared-search-box>
     </div>
 </div>
 
 <div class="row">
     <div class="col">
         <!-- tabla de resultados  -->
+        <ul class="list-group">
+            <li *ngFor="let c of countries" class="list-group-item">
+                {{c.capital}} - {{c.population}}
+            </li>
+        </ul>
     </div>
 </div>
